@@ -1,0 +1,17 @@
+{% extends 'layout.html' %} {% block body %}
+<div class="container mt-5" style="max-width: 50%">
+  <p>Let's see if your password mets the requirements</p>
+  {% if messages %}
+  <p>Oh no! looks like you have issues with your password!</p>
+  <p>These are the requirements you have faled:</p>
+  <ul>
+    {% for message in messages %}
+    <li>{{message}}</li>
+    {% endfor %}
+  </ul>
+  <h3 class="text-danger mt-3">{{warning}}</h3>
+  {% else %}
+  <p>Your password passed all the requirements.</p>
+  {% endif %}
+</div>
+{% endblock %}

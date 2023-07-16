@@ -1,0 +1,28 @@
+{% extends 'layout.html' %} {% block body %}
+
+<div class="container mt-5" style="max-width: 600px">
+  <p>Welcome to password check</p>
+  <p>Let's see if you password is secure!</p>
+  <p>Fill out the form below that has a username and password that has these restraints:</p>
+  <ul>
+    <li>Must have an uppercase letter somewhere</li>
+    <li>Must have a lowercase somewhere</li>
+    <li>Must have a number at the end</li>
+  </ul>
+  <form action="/check_password" method="POST">
+    <div class="mb-3">
+      <label for="username" class="form-label">username</label>
+      <input type="text" class="form-control" id="username" name="username" />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">password</label>
+      <input type="password" class="form-control" id="password" name="password" />
+    </div>
+    <div class="mb-3 text-danger">
+      <label class="form-label">{{warning}}</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}
