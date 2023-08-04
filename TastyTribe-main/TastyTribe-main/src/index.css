@@ -1,0 +1,21 @@
+.highlighted {
+  color: #ff421a;
+}
+.display-block {
+  display: block;
+}
+
+.food-card {
+  animation: floatingAnimation 3s ease infinite;
+}
+@keyframes floatingAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
